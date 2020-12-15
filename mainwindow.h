@@ -16,12 +16,22 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void addUnit(const Unit& unit);
+
+    void damageUnit(const int target, const int dmg, const int loc);
+
+    void updateView(const QModelIndex& current, const QModelIndex& previuos);
+
 private slots:
     void on_startButton_clicked();
+
+    void on_resetButton_clicked();
+
+    void on_dmgButton_clicked();
 
 private:
     Ui::MainWindow *ui;
     Model* model;
-    QVector<Unit> units;
+    bool isStarted = false;
 };
 #endif // MAINWINDOW_H

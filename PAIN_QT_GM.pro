@@ -9,6 +9,8 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    creatordialog.cpp \
+    damagedialog.cpp \
     main.cpp \
     mainwindow.cpp \
     model.cpp \
@@ -16,12 +18,16 @@ SOURCES += \
     unit.cpp
 
 HEADERS += \
+    creatordialog.h \
+    damagedialog.h \
     mainwindow.h \
     model.h \
     startdialog.h \
     unit.h
 
 FORMS += \
+    creatordialog.ui \
+    damagedialog.ui \
     mainwindow.ui \
     startdialog.ui
 

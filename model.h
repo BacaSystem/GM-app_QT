@@ -4,14 +4,13 @@
 #include <QAbstractItemModel>
 #include "unit.h"
 
-#include <QDebug>
-
 class Model : public QAbstractTableModel
 {
-    Q_OBJECT
+Q_OBJECT
 
 public:
-    explicit Model(QVector<Unit>& units, QObject *parent = nullptr) : QAbstractTableModel(parent), collection(units){}
+    explicit Model(QObject *parent = nullptr) : QAbstractTableModel(parent){}
+    explicit Model(const QVector<Unit>& units, QObject *parent = nullptr) : QAbstractTableModel(parent), collection(units){}
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     int columnCount(const QModelIndex &parent = QModelIndex()) const override;
@@ -23,12 +22,16 @@ public:
     bool insertRows(int position, int rows, const QModelIndex& index = QModelIndex()) override;
     bool removeRows(int position, int rows, const QModelIndex& index = QModelIndex()) override;
 
-    //bool insertColums(int position, int rows, const QModelIndex& index = QModelIndex()) override;
-    //bool removeColums(int position, int rows, const QModelIndex& index = QModelIndex()) override;
+    Qt::ItemFlags flags(const QModelIndex &index) const override;
+    bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) override;
+
+    bool resetModel();
+
+    const QVector<Unit>& getUnits() const;
+
 
 private:
     QVector<Unit> collection;
-    QStringList stringList;
 };
 
 #endif // MODEL_H

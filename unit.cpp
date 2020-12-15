@@ -2,20 +2,22 @@
 
 Unit::Unit(QObject *parent) : QObject(parent)
 {
+    name = "";
     for(int i = 0; i < 100; i++)
         armor[i] = 0;
 }
 
-Unit::Unit(const QString &name, const int initiative, QObject *parent)
+Unit::Unit(const QString &name, const int hp, const int initiative, QObject *parent) : QObject(parent)
 {
     this->name = name;
+    this->hp = hp;
     this->initiative = initiative;
 
     for(int i = 0; i < 100; i++)
         armor[i] = 0;
 }
 
-Unit::Unit(const QString &name, const int initiative, const int hp, const int wt, const int zr, const int armorH, const int armorLH, const int armorLL, const int armorB, const int armorRH, const int armorRL, QObject *parent)
+Unit::Unit(const QString &name, const int initiative, const int hp, const int wt, const int zr, const int armorH, const int armorLH, const int armorLL, const int armorB, const int armorRH, const int armorRL, QObject *parent) : QObject(parent)
 {
     this->name = name;
     this->hp = hp; this->wt = wt; this->zr = zr;
@@ -68,16 +70,15 @@ Unit& Unit::operator=(const Unit &unit)
     return *this;
 }
 
-void Unit::SetInit(int k10)
-{
-    initiative = zr + k10;
-}
-
 void Unit::TakeDmg(int dmg, int location)
 {
     if(location == 100)
         location = 0;
 
-    hp -= (dmg - wt - armor[location]);
+    int penetration;
+    if((penetration = dmg - wt - armor[location]) < 0)
+        penetration = 0;
+
+    hp -= penetration;
 }
 

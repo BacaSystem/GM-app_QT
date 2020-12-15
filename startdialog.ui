@@ -27,7 +27,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="vtext">
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
@@ -61,7 +61,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_3">
+      <widget class="QLineEdit" name="wText">
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
@@ -105,7 +105,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_4">
+      <widget class="QLineEdit" name="bText">
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
@@ -139,7 +139,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_5">
+      <widget class="QLineEdit" name="mText">
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
@@ -179,7 +179,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_2">
+      <widget class="QLineEdit" name="eText">
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
@@ -203,30 +203,14 @@
   </layout>
  </widget>
  <tabstops>
-  <tabstop>lineEdit</tabstop>
-  <tabstop>lineEdit_2</tabstop>
-  <tabstop>lineEdit_3</tabstop>
-  <tabstop>lineEdit_4</tabstop>
-  <tabstop>lineEdit_5</tabstop>
+  <tabstop>vtext</tabstop>
+  <tabstop>eText</tabstop>
+  <tabstop>wText</tabstop>
+  <tabstop>bText</tabstop>
+  <tabstop>mText</tabstop>
  </tabstops>
  <resources/>
  <connections>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>StartDialog</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>227</x>
-     <y>184</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>199</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
