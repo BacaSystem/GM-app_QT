@@ -42,7 +42,7 @@ void DamageDialog::on_buttonBox_accepted()
     else
     {
         QMessageBox msgBox(QMessageBox::Warning, tr("Warning"),
-                           tr("Values must be an integer type"), QMessageBox::StandardButtons(), this);
+                           tr("Invalid arguments types! Please correct form."), QMessageBox::StandardButtons(), this);
         msgBox.exec();
     }
 }
