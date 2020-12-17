@@ -226,7 +226,7 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../Resources/char.png</pixmap>
+         <pixmap resource="res.qrc">:/images/Resources/char.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>false</bool>
@@ -383,7 +383,9 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
  <slots>
   <slot>start()</slot>
